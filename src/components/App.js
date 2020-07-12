@@ -4,7 +4,7 @@ import Header from "./Header";
 import Movie from "./Movie";
 import Search from "./Search";
 
-const MOVIE_API_URL = "http://www.omdbapi.com/?i=tt3896198&apikey=a60fef20";
+const MOVIE_API_URL = "https://www.omdbapi.com/?s=galaxy&apikey=4a3b711b";
 
 const initialState = {
   loading: true,
@@ -56,7 +56,7 @@ const App = () => {
       type: "SEARCH_MOVIES_REQUEST",
     });
 
-    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=a60fef20`)
+    fetch(`https://www.omdbapi.com/?s=${searchValue}&apikey=4a3b711b`)
       .then((response) => response.json())
       .then((jsonResponse) => {
         if (jsonResponse.Response === "True") {
@@ -79,10 +79,10 @@ const App = () => {
     <div className="App">
       <Header text="Not Another Movie Search App" />
       <Search search={search} />
-      <p className="App-intro">Sharing a few of our favorite movies.</p>
+      <p className="App-intro">Sharing a few of our favourite movies</p>
       <div className="movies">
         {loading && !errorMessage ? (
-          <span>loading...</span>
+          <span>loading... </span>
         ) : errorMessage ? (
           <div className="errorMessage">{errorMessage}</div>
         ) : (
